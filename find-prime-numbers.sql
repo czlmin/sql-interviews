@@ -1,4 +1,12 @@
-declare @n as int = 100;
+-- https://www.hackerrank.com/challenges/print-prime-numbers/problem?isFullScreen=true
+
+SET NOCOUNT ON;
+
+/*
+Enter your query here.
+Please append a semicolon ";" at the end of the query and enter your query in a single line to avoid error.
+*/
+declare @n as int = 1000;
 declare @i as int = 2;
 declare @is_prime as int = 1;
 declare @j as int;
@@ -26,3 +34,8 @@ begin
     end
     set @i = @i + 1
 end
+
+select string_agg(prime_number, '&') as prime_numbers 
+from primes
+
+go
